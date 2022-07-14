@@ -49,7 +49,7 @@ As such, those are in use within the default layer at this time.*/
  // |       |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
                      bindings = <
        &trans    &trans   &trans &trans   &trans   &trans                             &trans    &trans    &trans    &trans   &trans   &trans
-       &trans    &trans   &trans &trans   &trans   &trans                             &kp SLASH &kp ASTRK &kp LPAR &kp RPAR  &trasn   &trans
+       &trans    &trans   &trans &trans   &trans   &trans                             &kp SLASH &kp ASTRK &kp LPAR &kp RPAR  &trans   &trans
        &trans    &trans   &trans &trans   &trans   &trans                             &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE  &trans
        &trans    &trans   &trans &trans   &trans   &trans    &trans          &trans   &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH  &trans
        &trans    &trans   &trans &trans   &trans   &trans    &trans          &trans   &trans    &trans    &trans    &trans   &trans   &trans
