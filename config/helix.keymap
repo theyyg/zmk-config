@@ -91,14 +91,14 @@ As such, those are in use within the default layer at this time.*/
  // |  BT CLR  | BT SEL0  | BT SEL1  | BT SEL2  | BGT SEL3 | BT SEL4  |                                          |          |          |          |          |          |  EP TOG  |
  // |          |          |          |          |          |          |                                          | RGB EFF+ | RGB HUE+ | RGB SAT+ | RGB SPD+ | RGB BRI+ | RGB TOG  |
  // |  BT NXT  |          |          |          |          |          |                                          | RGB EFF- | RGB HUE- | RGB SAT- | RGB SPD- | RGB BRI- |          |
- // |  BT PRV  |          |          | OUT TOG  | OUT USB  | OUT BLE  |          |                    |          |          |          |          |          |          |          |
- // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
+ // |  BT PRV  |          |          | OUT TOG  | OUT USB  | OUT BLE  |          |                    |          |          |          |          |          |          |  EP ON   |
+ // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |  EP OFF  |
                      bindings = <
        &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                          &trans          &trans          &trans          &trans          &trans          &ext_power EP_TOG
        &trans     &trans       &trans       &trans       &trans       &trans                                &rgb_ug RGB_EFF &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_TOG 
        &bt BT_NXT &trans       &trans       &trans       &trans       &trans                                &rgb_ug RGB_EFR &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &rgb_ug RGB_BRD &trans
-       &bt BT_PRV &trans       &trans       &out OUT_TOG &out OUT_USB &out OUT_BLE &trans          &trans   &trans          &trans          &trans          &trans          &trans          &trans
-       &trans     &trans       &trans       &trans       &trans       &trans       &trans          &trans   &trans          &trans          &trans          &trans          &trans          &trans
+       &bt BT_PRV &trans       &trans       &out OUT_TOG &out OUT_USB &out OUT_BLE &trans          &trans   &trans          &trans          &trans          &trans          &trans          &ext_power EP_ON
+       &trans     &trans       &trans       &trans       &trans       &trans       &trans          &trans   &trans          &trans          &trans          &trans          &trans          &ext_power EP_OFF
                      >;
               };
               game_layer {
