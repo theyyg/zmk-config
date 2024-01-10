@@ -16,6 +16,7 @@
  #define RAISE  2
  #define PAD    3
  #define ADJUST 4
+ #define GAME   5
 
 /* NOTE: At the time of the creation of this keymap, there are no specified codes for 'eisuu' and 'kana' input in ZMK.
 However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'eisuu' input respectively.
@@ -36,16 +37,16 @@ As such, those are in use within the default layer at this time.*/
        &gresc          &kp N1  &kp N2     &kp N3   &kp N4    &kp N5                               &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp BSPC
        &kp TAB         &kp Q   &kp W      &kp E    &kp R     &kp T                                &kp Y     &kp U     &kp I     &kp O      &kp P     &kp BSLH
        &kp LCTRL       &kp A   &kp S      &kp D    &kp F     &kp G                                &kp H     &kp J     &kp K     &kp L      &kp SEMI  &kp SQT
-       &kp LSHFT       &kp Z   &kp X      &kp C    &kp V     &kp B    &kp MINUS        &kp EQUAL  &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp RSHIFT
-       &to DEFAULT     &to PAD &mo ADJUST &kp LGUI &kp LALT  &kp RET  &mo LOWER        &mo RAISE  &kp SPACE &kp RALT  &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT
+       &kp LSHFT       &kp Z   &kp X      &kp C    &kp V     &kp B    &kp MINUS        &mo ADJUST &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp RSHIFT
+       &to DEFAULT     &to PAD &to GAME   &kp LGUI &kp LALT  &kp RET  &mo LOWER        &mo RAISE  &kp SPACE &kp RALT  &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT
                      >;
               };
               lower_layer {
  // -------------------------------------------------------------------------------------------------------------------------
  // |       |      |      |      |      |      |                                  |      |      |      |      |      |      |
- // |       |      |      |      |      |      |                                  |  /   |  *   |  (   |  )   |      | DEL  |
+ // |       |      |      |      |      |      |                                  |  /   |  *   |  (   |  )   |  \   | DEL  |
  // |       |      |      |      |      |      |                                  |  -   |  +   |  {   |  }   |  |   |      |
- // |       |      |      |      |      |      |      |                    |      |  _   |  =   |  [   |  ]   |  \   |      |
+ // |       |      |      |      |      |      |      |                    |      |  _   |  =   |  [   |  ]   |  /   |      |
  // | CAPS  |      |      |      |      |      |      |                    |      |      |      | HOME | PGUP | PGDN | END  |
                      bindings = <
        &trans    &trans   &trans &trans   &trans   &trans                             &trans    &trans    &trans    &trans   &trans    &trans
@@ -57,7 +58,7 @@ As such, those are in use within the default layer at this time.*/
               };
               raise_layer {
  // --------------------------------------------------------------------------------------------------------------------------------------
- // |       |  F1   |  F2   |  F3   |  F4   |  F5   |                                    |  F6   |  F7   |  F8   |  F9   |  F10  |  F11  |
+ // |  ESC  |  F1   |  F2   |  F3   |  F4   |  F5   |                                    |  F6   |  F7   |  F8   |  F9   |  F10  |  F11  |
  // |   ~   |   !   |   @   |   #   |   $   |   %   |                                    |   ^   |   &   |   *   |   (   |   )   |  F12  |
  // |   `   |   1   |   2   |   3   |   4   |   5   |                                    |   6   |   7   |   8   |   9   |   0   |  F12  |
  // |       |  F1   |  F2   |  F3   |  F4   |  F5   |                                    |  F6   |  F7   |  F8   |  F9   |  F10  |  F11  |
@@ -100,6 +101,29 @@ As such, those are in use within the default layer at this time.*/
        &trans     &trans       &trans       &trans       &trans       &trans       &trans          &trans   &trans          &trans          &trans          &trans          &trans          &trans
                      >;
               };
+              game_layer {
+ // ---------------------------------------------------------------------------------------------------------------------------------
+ // |  ESC     |          |          |          |          |          |                                          |          |          |          |          |          |          |
+ // |          |          |          |          |          |          |                                          |          |          |          |          |          |          |
+ // |          |          |          |          |          |          |                                          |          |          |          |          |          |          |
+ // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
+ // |  CAPS    |          |          |   LALT   |  SPACE   |  SPACE   |          |                    |          |          |          |          |          |          |          |
+                      bindings = <
+       &kp ESC    &trans       &trans       &trans       &trans       &trans                                &trans          &trans          &trans          &trans          &trans          &trans
+       &trans     &trans       &trans       &trans       &trans       &trans                                &trans          &trans          &trans          &trans          &trans          &trans
+       &kp LCTRL  &trans       &trans       &trans       &trans       &trans                                &trans          &trans          &trans          &trans          &trans          &trans
+       &trans     &trans       &trans       &trans       &trans       &trans       &trans          &trans   &trans          &trans          &trans          &trans          &trans          &trans
+       &kp CAPS   &to DEFAULT  &to DEFAULT  &kp LALT     &kp SPACE    &kp SPACE    &trans          &trans   &kp RETURN      &trans          &trans          &trans          &trans          &trans
+                     >;
+              };
        };
 };
+
+ // Empty Template
+ // ---------------------------------------------------------------------------------------------------------------------------------
+ // |          |          |          |          |          |          |                                          |          |          |          |          |          |          |
+ // |          |          |          |          |          |          |                                          |          |          |          |          |          |          |
+ // |          |          |          |          |          |          |                                          |          |          |          |          |          |          |
+ // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
+ // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
 
