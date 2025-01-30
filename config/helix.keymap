@@ -107,13 +107,13 @@ As such, those are in use within the default layer at this time.*/
  // |          |          |          |          |          |          |                                          |          |          |          |          |          |          |
  // |          |          |          |          |          |          |                                          |          |          |          |          |          |          |
  // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
- // |  CAPS    |          |          |   LALT   |  SPACE   |  SPACE   |          |                    |          |          |          |          |          |          |          |
+ // |          |          |          |   LALT   |  SPACE   |          |          |                    |          |          |          |          |          |          |          |
                       bindings = <
        &kp ESC    &trans       &trans       &trans       &trans       &trans                                &trans          &trans          &trans          &trans          &trans          &trans
        &trans     &trans       &trans       &trans       &trans       &trans                                &trans          &trans          &trans          &trans          &trans          &trans
        &kp LCTRL  &trans       &trans       &trans       &trans       &trans                                &trans          &trans          &trans          &trans          &trans          &trans
        &trans     &trans       &trans       &trans       &trans       &trans       &trans          &trans   &trans          &trans          &trans          &trans          &trans          &trans
-       &kp CAPS   &to DEFAULT  &to DEFAULT  &kp LALT     &kp SPACE    &kp SPACE    &trans          &trans   &kp RETURN      &trans          &trans          &trans          &trans          &trans
+       &to DEFAULT &mo PAD     &mo RAISE    &kp LALT     &kp SPACE    &kp RETURN   &trans          &trans   &kp SPACE       &trans          &trans          &trans          &trans          &trans
                      >;
               };
        };
